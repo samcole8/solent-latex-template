@@ -1,0 +1,42 @@
+\documentclass[12pt]{report}
+
+% Images
+\usepackage[]{graphicx}
+
+% BibTeX
+\usepackage{biblatex}
+\addbibresource{refs.bib}
+
+% Titles
+\usepackage{titlesec}
+
+% Fill page
+\usepackage{fullpage}
+
+\title{Report}
+\author{Anon}
+\date{January 1970}
+
+
+% Document
+
+
+\begin{document}
+
+    \maketitle
+
+    \tableofcontents
+
+    % Redefine format for chapter headings in document body
+    \titleformat{\chapter}[display]
+    {\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
+    % Adjust spacing around chapter headings
+    \titlespacing*{\chapter}{0pt}{50pt}{20pt}
+
+    \chapter{Introduction}
+    
+        \pagenumbering{arabic}
+        \section{Part 1}
+        \section{Part 2}
+
+\end{document}
