@@ -14,11 +14,11 @@ You can define headings up to level four as follows:
 
 ### Paragraphs
 
-Paragraphs can be written in plaintext, but should be separated with `/par`:
+Paragraphs can be written in plaintext, separated by newlines:
 
 ```tex
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor diam augue, at fermentum mauris cursus eget.
-\par
+
 Fusce mauris dolor, egestas quis molestie ac, semper et libero. Pellentesque varius eros in dui porta suscipit.
 ```
 
