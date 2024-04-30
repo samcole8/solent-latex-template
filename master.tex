@@ -25,12 +25,36 @@
     \author{Anon}
     \date{January 1970}
 
+    % frontmatter/mainmatter/backmatter
+    \makeatletter
+
+        \newcommand\frontmatter{%
+            \cleardoublepage
+        %\@mainmatterfalse
+        \pagenumbering{roman}}
+
+        \newcommand\mainmatter{%
+            \cleardoublepage
+        % \@mainmattertrue
+        \pagenumbering{arabic}}
+
+        \newcommand\backmatter{%
+        \if@openright
+            \cleardoublepage
+        \else
+            \clearpage
+        \fi
+        % \@mainmatterfalse
+        }
+
+    \makeatother
+
+
 \begin{document}
 
-    % Front matter
+    \raggedright
 
-        % Roman numeral page numbers
-        \pagenumbering{roman}
+    \frontmatter
 
         % Title page
         \maketitle
@@ -39,16 +63,14 @@
         \listoffigures
         \listoftables
 
-        % Redefine format for chapter headings in document body
-        \titleformat{\chapter}[display]
-        {\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
-        \begin{flushleft}
+    % Redefine format for chapter headings in document body
+    \titleformat{\chapter}[display]
+    {\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
 
-    
-    \chapter{Introduction}
-    \pagenumbering{arabic}
+    \mainmatter
 
-    Content goes here.
+        \chapter{Introduction}
 
-\end{flushleft}
+            Content goes here.
+
 \end{document}
