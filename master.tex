@@ -28,22 +28,27 @@
 \begin{document}
 
     % Front matter
+
+        % Roman numeral page numbers
         \pagenumbering{roman}
+
+        % Title page
         \maketitle
-        
+
         \tableofcontents
         \listoffigures
         \listoftables
+
         % Redefine format for chapter headings in document body
         \titleformat{\chapter}[display]
         {\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
+        \begin{flushleft}
 
-        
-    \chapter{Introduction}
-    \begin{flushleft}
-    \pagenumbering{arabic}
     
-    Lorem Ipsum.
+    \chapter{Introduction}
+    \pagenumbering{arabic}
+
+    Content goes here.
 
 \end{flushleft}
 \end{document}
