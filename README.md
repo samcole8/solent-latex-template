@@ -40,3 +40,16 @@ In the example above:
 - LaTeX looks for an image called your_image.png in the ./images/ folder
 - The figure has the caption *Example image*
 
+### Tables
+
+### Referencing
+
+Referencing is WIP. Solent has a CSL style but no BibLaTex support (.bbx and .cbx). Therefore I have to make them myself, and I don't have time right now!
+
+### Cross-referencing
+
+#### Figures
+
+#### Headings
+
+#### Tables
