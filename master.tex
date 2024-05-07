@@ -1,54 +1,49 @@
 % Preamble
 
-    \documentclass[12pt]{report}
+\documentclass[12pt]{report}
 
-    % Spacing
-    \usepackage[parfill]{parskip}
-    \usepackage{titlesec}
+% Spacing
+\usepackage[parfill]{parskip}
+\usepackage{titlesec}
 
-    % Fonts
-    \usepackage[T1]{fontenc}
+% Fonts
+\usepackage[T1]{fontenc}
 
-    % Images
-    \usepackage[]{graphicx}
-    \usepackage[]{capt-of}
-    \graphicspath{ {./images/} }
+% Images
+\usepackage[]{graphicx}
+\usepackage[]{capt-of}
+\graphicspath{ {./images/} }
 
-    % BibTeX
-    \usepackage{biblatex}
-    \addbibresource{refs.bib}
+% Fill page
+\usepackage{fullpage}
 
-    % Fill page
-    \usepackage{fullpage}
+\title{Report}
+\author{Anon}
+\date{January 1970}
 
-    \title{Report}
-    \author{Anon}
-    \date{January 1970}
+% frontmatter/mainmatter/backmatter
+\makeatletter
 
-    % frontmatter/mainmatter/backmatter
-    \makeatletter
+    \newcommand\frontmatter{%
+        \cleardoublepage
+    %\@mainmatterfalse
+    \pagenumbering{roman}}
 
-        \newcommand\frontmatter{%
-            \cleardoublepage
-        %\@mainmatterfalse
-        \pagenumbering{roman}}
+    \newcommand\mainmatter{%
+        \cleardoublepage
+    % \@mainmattertrue
+    \pagenumbering{arabic}}
 
-        \newcommand\mainmatter{%
-            \cleardoublepage
-        % \@mainmattertrue
-        \pagenumbering{arabic}}
+    \newcommand\backmatter{%
+    \if@openright
+        \cleardoublepage
+    \else
+        \clearpage
+    \fi
+    % \@mainmatterfalse
+    }
 
-        \newcommand\backmatter{%
-        \if@openright
-            \cleardoublepage
-        \else
-            \clearpage
-        \fi
-        % \@mainmatterfalse
-        }
-
-    \makeatother
-
+\makeatother
 
 \begin{document}
 
@@ -77,6 +72,6 @@
 
         \chapter{Conclusions}
 
-        \chapter{Reference List}
+        \thebibliography
 
 \end{document}
