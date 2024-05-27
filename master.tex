@@ -17,6 +17,10 @@
 % Fill page
 \usepackage{fullpage}
 
+% Bibliography
+\usepackage[backend=biber, style=solent-harvard]{biblatex}
+\addbibresource{refs.bib}
+
 \title{Report}
 \author{Anon}
 \date{January 1970}
@@ -47,6 +51,7 @@
 
 \begin{document}
 
+    \nocite{*}
     \raggedright
 
     \frontmatter
@@ -72,6 +77,6 @@
 
         \chapter{Conclusions}
 
-        \thebibliography
+        \printbibliography[heading=bibnumbered,title={References}]
 
 \end{document}
