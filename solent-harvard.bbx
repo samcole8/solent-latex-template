@@ -1,11 +1,12 @@
 \ProvidesFile{solent-harvard.bbx}
-\RequireBibliographyStyle{standard}
+\RequireBibliographyStyle{authoryear}
 
 % Custom drivers:
 
 \DeclareFieldFormat{date}{\mkbibbrackets{viewed #1}}
 \DeclareFieldFormat{url}{\url{#1}}
 \DeclareFieldFormat{titlecase}{\mkbibemph{#1}}
+\DeclareFieldFormat{publisher}{{#1}}
 
 % online
 
@@ -36,21 +37,23 @@
 % book
 
 \newbibmacro*{bbx:book}{%
-  \printnames{author}%
+  \ifnameundef{author}
+    {\printtext{\textsc{Anon.}}}
+    {\printnames{author}\addcomma\space}
   \iffieldundef{year}
     {}
     {\addcomma\space\printfield{year}}%
   \adddot\space
-  \printfield[titlecase]{title}%
+  \printfield[titlecase]{title}\adddot\addspace
   \iffieldundef{edition}
     {}
     {\addspace\printfield{edition}\adddot}%
   \iffieldundef{address}
     {}
-    {\addcomma\space\printfield{address}\addcolon}%
-  \iffieldundef{publisher}
+    {\addcomma\space\printfield{address}\addcolon\addspace}%
+  \iflistundef{publisher}
     {}
-    {\addspace\printfield{publisher}}%
+    {\addspace\printlist{publisher}\adddot}%
   \newunit\newblock
 }
 
@@ -64,5 +67,3 @@
 % misc (standards e.t.c.)
 
 % inproceedings (conference papers)
-
-% legislation
