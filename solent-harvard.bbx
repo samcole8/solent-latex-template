@@ -1,0 +1,68 @@
+\ProvidesFile{solent-harvard.bbx}
+\RequireBibliographyStyle{standard}
+
+% Custom drivers:
+
+\DeclareFieldFormat{date}{\mkbibbrackets{viewed #1}}
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat{titlecase}{\mkbibemph{#1}}
+
+% online
+
+\newbibmacro*{bbx:online}{
+  \ifnameundef{author}
+    {\printtext{\textsc{Anon.}}}
+    {\printnames[onlineauthor]{author}\addcomma\space}
+  \printfield{year}\adddot\space
+  \printfield[titlecase]{title}\adddot\space
+  \printdate\adddot\space
+  \printtext{Available from:}
+  \printfield{url}
+}
+
+\DeclareBibliographyDriver{online}{%
+  \usebibmacro{bbx:online}%
+  \finentry
+}
+
+\DeclareNameFormat{author}{%
+  \nameparts{family, given}
+  \ifblank{\namepartfamily}
+    {\ifblank{\namepartgiven}
+      {\textsc{Anon.}}
+      {\textsc{\namepartgiveni\addcomma\space\namepartgiven}}}
+    {\textsc{\namepartfamily\addcomma\space\namepartgiveni}}}
+
+% book
+
+\newbibmacro*{bbx:book}{%
+  \printnames{author}%
+  \iffieldundef{year}
+    {}
+    {\addcomma\space\printfield{year}}%
+  \adddot\space
+  \printfield[titlecase]{title}%
+  \iffieldundef{edition}
+    {}
+    {\addspace\printfield{edition}\adddot}%
+  \iffieldundef{address}
+    {}
+    {\addcomma\space\printfield{address}\addcolon}%
+  \iffieldundef{publisher}
+    {}
+    {\addspace\printfield{publisher}}%
+  \newunit\newblock
+}
+
+\DeclareBibliographyDriver{book}{%
+  \usebibmacro{bbx:book}%
+  \finentry
+}
+
+% article (journal article)
+
+% misc (standards e.t.c.)
+
+% inproceedings (conference papers)
+
+% legislation
