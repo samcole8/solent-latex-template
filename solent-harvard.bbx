@@ -63,12 +63,13 @@
 \newbibmacro*{bbx:book}{%
   \ifnameundef{author}
     {\printtext{\textsc{Anon.}}}
-    {\printnames{author}\addcomma\space}
+    {\printnames{author}}%
   \iffieldundef{year}
+    {\adddot}
+    {\addcomma\space\printfield{year}\adddot}%
+  \iffieldundef{title}
     {}
-    {\addcomma\space\printfield{year}}%
-  \adddot\space
-  \printfield[titlecase]{title}\adddot\addspace
+    {\addspace\printfield[titlecase]{title}\adddot}
   \iffieldundef{edition}
     {}
     \ifnumless{\thefield{edition}}{2}
