@@ -20,7 +20,7 @@
 \newcommand{\superscriptord}[1]{%
   \textsuperscript{#1}% Apply superscript to the ordinal suffix
 }
-
+\renewcommand*{\ppspace}{}
 \DeclareNameAlias{editor}{first-last}
 
 % online
@@ -72,8 +72,8 @@
     {}
     {\addspace\printlist{publisher}}%
   \iffieldundef{pages}
-    {\adddot}
-    {\addcomma\addspace\printfield{pages}\adddot}
+    {}
+    {\addcomma\addspace\printfield{pages}}
   \newunit\newblock
 }
 
@@ -116,8 +116,8 @@
     {}
     {\addspace\printlist{publisher}}%
   \iffieldundef{pages}
-    {\adddot}
-    {\addcomma\addspace\printfield{pages}\adddot}
+    {}
+    {\addcomma\addspace\printfield{pages}}
   \newunit\newblock
 }
 
@@ -164,8 +164,8 @@
     {}
     {\addspace\printlist{publisher}}%
   \iffieldundef{pages}
-    {\adddot}
-    {\addcomma\addspace\printfield{pages}\adddot}
+    {}
+    {\addcomma\addspace\printfield{pages}}
   \newunit\newblock
 }
 
