@@ -21,6 +21,7 @@
   \textsuperscript{#1}% Apply superscript to the ordinal suffix
 }
 
+\DeclareNameAlias{editor}{first-last}
 
 % online
 
@@ -93,6 +94,13 @@
   \iffieldundef{title}
     {}
     {\addspace\printfield[chaptercase]{title}\adddot}
+  \ifnameundef{editor}
+    {}
+    {\ifnum\value{editor} > 1
+        \printtext{In:}\addspace\printnames{editor}\addcomma\addspace\printtext{eds}\adddot
+    \else
+        \printtext{In:}\addspace\printnames{editor}\addcomma\addspace\printtext{ed}\adddot
+    \fi}
   \iffieldundef{booktitle}
     {}
     {\addspace\printfield[titlecase]{booktitle}\adddot}
