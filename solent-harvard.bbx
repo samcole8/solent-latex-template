@@ -69,7 +69,10 @@
     {\addcomma\space\printlist{location}\addcolon\addspace}
   \iflistundef{publisher}
     {}
-    {\addspace\printlist{publisher}\adddot}%
+    {\addspace\printlist{publisher}}%
+  \iffieldundef{pages}
+    {\adddot}
+    {\addcomma\addspace\printfield{pages}\adddot}
   \newunit\newblock
 }
 
@@ -103,7 +106,10 @@
   {\addcomma\space\printlist{location}\addcolon\addspace}
   \iflistundef{publisher}
     {}
-    {\addspace\printlist{publisher}\adddot}%
+    {\addspace\printlist{publisher}}%
+  \iffieldundef{pages}
+    {\adddot}
+    {\addcomma\addspace\printfield{pages}\adddot}
   \newunit\newblock
 }
 
