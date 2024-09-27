@@ -132,4 +132,46 @@
 
 % inproceedings (conference papers)
 
+\newbibmacro*{bbx:inproceedings}{%
+  \ifnameundef{author}%
+    {\printtext{ANON}\adddot}
+    {\printnames{author}}%
+  \iffieldundef{year}
+    {\adddot}
+    {\addcomma\space\printfield{year}\adddot}%
+  \iffieldundef{title}
+    {}
+    {\addspace\printfield[chaptercase]{title}\adddot}
+  \ifnameundef{editor}
+    {}
+    {\ifnum\value{editor} > 1
+        \printtext{In:}\addspace\printnames{editor}\addcomma\addspace\printtext{eds}\adddot
+    \else
+        \printtext{In:}\addspace\printnames{editor}\addcomma\addspace\printtext{ed}\adddot
+    \fi}
+  \iffieldundef{booktitle}
+    {}
+    {\addspace\printfield[titlecase]{booktitle}\adddot}
+  \iffieldundef{edition}
+    {}
+    {\ifnumless{\thefield{edition}}{2}%
+      {}
+      {\addspace\printfield{edition}}}%
+  \iflistundef{location}
+    {}
+    {\addspace\printlist{location}\addcolon\addspace}
+  \iflistundef{publisher}
+    {}
+    {\addspace\printlist{publisher}}%
+  \iffieldundef{pages}
+    {\adddot}
+    {\addcomma\addspace\printfield{pages}\adddot}
+  \newunit\newblock
+}
+
+\DeclareBibliographyDriver{inproceedings}{%
+  \usebibmacro{bbx:inproceedings}%
+  \finentry
+}
+
 % misc
