@@ -6,6 +6,7 @@
 \DeclareFieldFormat{date}{\mkbibbrackets{viewed #1}}
 \DeclareFieldFormat{url}{\url{#1}}
 \DeclareFieldFormat{titlecase}{\mkbibemph{#1}}
+\DeclareFieldFormat{chaptercase}{{#1}}
 \DeclareFieldFormat{publisher}{{#1}}
 \DeclareFieldFormat{edition}{%
   #1\superscriptord{\mkordinalsuffix{#1}}\addspace\printtext{ed.}% Print the edition number with the superscripted ordinal suffix
@@ -78,6 +79,38 @@
 }
 
 % incollection (book section)
+
+\newbibmacro*{bbx:incollection}{%
+  \ifnameundef{author}%
+    {\printtext{ANON}\adddot}
+    {\printnames{author}}%
+  \iffieldundef{year}
+    {\adddot}
+    {\addcomma\space\printfield{year}\adddot}%
+  \iffieldundef{title}
+    {}
+    {\addspace\printfield[chaptercase]{title}\adddot}
+  \iffieldundef{booktitle}
+    {}
+    {\addspace\printfield[titlecase]{booktitle}\adddot}
+  \iffieldundef{edition}
+    {}
+    \ifnumless{\thefield{edition}}{2}
+      {}
+      {\addspace\printfield{edition}}%
+  \iffieldundef{address}
+    {}
+    {\addcomma\space\printfield{address}\addcolon\addspace}%
+  \iflistundef{publisher}
+    {}
+    {\addspace\printlist{publisher}\adddot}%
+  \newunit\newblock
+}
+
+\DeclareBibliographyDriver{incollection}{%
+  \usebibmacro{bbx:incollection}%
+  \finentry
+}
 
 % article (journal article)
 
