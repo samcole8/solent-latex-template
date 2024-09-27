@@ -98,9 +98,9 @@
     \ifnumless{\thefield{edition}}{2}
       {}
       {\addspace\printfield{edition}}%
-  \iffieldundef{address}
-    {}
-    {\addcomma\space\printfield{address}\addcolon\addspace}%
+  \iflistundef{location}
+  {}
+  {\addcomma\space\printlist{location}\addcolon\addspace}
   \iflistundef{publisher}
     {}
     {\addspace\printlist{publisher}\adddot}%
