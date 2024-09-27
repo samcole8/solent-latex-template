@@ -62,12 +62,12 @@
     {\addspace\printfield[titlecase]{title}\adddot}
   \iffieldundef{edition}
     {}
-    \ifnumless{\thefield{edition}}{2}
+    {\ifnumless{\thefield{edition}}{2}
       {}
-      {\addspace\printfield{edition}}%
+      {\addspace\printfield{edition}}}%
   \iflistundef{location}
     {}
-    {\addcomma\space\printlist{location}\addcolon\addspace}
+    {\addspace\printlist{location}\addcolon\addspace}
   \iflistundef{publisher}
     {}
     {\addspace\printlist{publisher}}%
@@ -106,12 +106,12 @@
     {\addspace\printfield[titlecase]{booktitle}\adddot}
   \iffieldundef{edition}
     {}
-    \ifnumless{\thefield{edition}}{2}
+    {\ifnumless{\thefield{edition}}{2}
       {}
-      {\addspace\printfield{edition}}%
+      {\addspace\printfield{edition}}}%
   \iflistundef{location}
     {}
-    {\addcomma\space\printlist{location}\addcolon\addspace}
+    {\addspace\printlist{location}\addcolon\addspace}
   \iflistundef{publisher}
     {}
     {\addspace\printlist{publisher}}%
