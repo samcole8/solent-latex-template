@@ -1,6 +1,6 @@
 # SSU LaTeX Template
-![](https://img.shields.io/github/v/release/samcole8/solent-latex-template
-)
+[![](https://img.shields.io/github/v/release/samcole8/solent-latex-template
+)](https://github.com/samcole8/solent-latex-template/releases/latest)
 ![](https://img.shields.io/badge/status-in_development-orange
 )
 
