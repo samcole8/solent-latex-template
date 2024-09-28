@@ -11,6 +11,7 @@
 \DeclareFieldFormat{edition}{%
   #1\superscriptord{\mkordinalsuffix{#1}}\addspace\printtext{ed.}% Print the edition number with the superscripted ordinal suffix
 }
+\DeclareFieldFormat[article]{number}{(#1)}
 \newcommand{\mkordinalsuffix}[1]{%
   \ifnum#1=1 st\fi%
   \ifnum#1=2 nd\fi%
