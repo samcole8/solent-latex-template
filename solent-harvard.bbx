@@ -140,10 +140,16 @@
     {\addspace\printfield[chaptercase]{title}\adddot}
   \iffieldundef{journaltitle}
     {}
-    {\addspace\printfield[titlecase]{journaltitle}%
-    \iffieldundef{pages}%
+    {\addspace\printfield[titlecase]{journaltitle}}%
+  \iffieldundef{volume}
+    {}
+    {\addcomma\addspace\printfield{volume}%
+    \iffieldundef{number}%
       {}
-      {\addcomma\addspace\printfield{pages}}}
+      {\printfield{number}}}%
+  \iffieldundef{pages}%
+    {}
+    {\addcomma\addspace\printfield{pages}}
   \newunit\newblock
 }
 
