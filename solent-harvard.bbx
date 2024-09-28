@@ -128,6 +128,30 @@
 
 % article (journal article)
 
+\newbibmacro*{bbx:article}{%
+  \ifnameundef{author}%
+    {\printtext{ANON}\adddot}
+    {\printnames{author}}%
+  \iffieldundef{year}
+    {\adddot}
+    {\addcomma\space\printfield{year}\adddot}%
+  \iffieldundef{title}
+    {}
+    {\addspace\printfield[chaptercase]{title}\adddot}
+  \iffieldundef{journaltitle}
+    {}
+    {\addspace\printfield[titlecase]{journaltitle}%
+    \iffieldundef{pages}%
+      {}
+      {\addcomma\addspace\printfield{pages}}}
+  \newunit\newblock
+}
+
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{bbx:article}%
+  \finentry
+}
+
 % techreport (standards e.t.c.)
 
 % inproceedings (conference papers)
