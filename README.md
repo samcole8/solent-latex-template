@@ -1,4 +1,8 @@
-# solent-latex-template
+# SSU LaTeX Template
+![](https://img.shields.io/github/v/release/samcole8/solent-latex-template
+)
+![](https://img.shields.io/badge/status-in_development-orange
+)
 
 LaTeX Template for Southampton Solent University reports.
 
@@ -15,7 +19,7 @@ Therefore, it is strongly advised that:
 
 ### Headings
 
-You can define headings up to level four as follows:
+You can define headings at levels one through four, as follows:
 
 1. `/chapter{chapter name}`
 2. `/section{section name}`
@@ -69,7 +73,7 @@ The source types listed below are work-in-progress, partially complete, and may 
 
 References go in the `refs.bib` file in BibTeX format. You can generate these with a reference management tool such as RefWorks or Zotero.
 
-These references will be automatically formatted and parsed into the document upon creation.
+References will be automatically formatted and parsed into the document upon creation.
 
 #### Citations
 
