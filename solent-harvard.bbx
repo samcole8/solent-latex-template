@@ -174,17 +174,16 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {\adddot}
-    {\addcomma\space\printfield{year}\printfield{extradate}\adddot}%
+    {}
+    {\addcomma\space\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
-    {\addspace\printfield[titlecase]{title}\adddot}
-  \iflistundef{location}
-    {}
-    {\addspace\printlist{location}\addcolon\addspace}
+    {\adddot\addspace\printfield[titlecase]{title}}
   \iflistundef{publisher}
     {}
-    {\addspace\printlist{publisher}}%
+    {\adddot\addspace\iflistundef{location}%
+      {\printlist{publisher}}%
+      {\printlist{location}\addcolon\addspace\printlist{publisher}}}%
   \iffieldundef{pages}
     {}
     {\addcomma\addspace\printfield{pages}}
