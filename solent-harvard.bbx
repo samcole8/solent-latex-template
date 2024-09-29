@@ -3,7 +3,7 @@
 
 % Custom drivers:
 
-\DeclareFieldFormat{date}{\mkbibbrackets{viewed #1}}
+\DeclareFieldFormat{urldate}{\mkbibbrackets{\printtext{viewed}\addspace\thefield{urlday}\addspace\mkbibmonth{\thefield{urlmonth}}\addspace\thefield{urlyear}}}
 \DeclareFieldFormat{url}{\url{#1}}
 \DeclareFieldFormat{titlecase}{\mkbibemph{#1}}
 \DeclareFieldFormat{chaptercase}{{#1}}
@@ -37,14 +37,17 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {\adddot}
+    {\addcomma\space\printtext{n.d}\adddot\printtext{-}\printfield{extradate}\adddot}
     {\addcomma\space\printfield{year}\printfield{extradate}\adddot}%
   \iffieldundef{title}
     {}
-    {\addspace\printfield[titlecase]{title}}
-  \iffieldundef{year}
+    {\addspace\printfield[titlecase]{title}
+    \iffieldundef{urlyear}
+      {\adddot}
+      {}}%
+  \iffieldundef{urlyear}
     {}
-    {\addspace\printdate\adddot}
+    {\addspace\printurldate\adddot}
   \iffieldundef{url}
     {}
     {\addspace\printtext{Available from:}\addspace\printfield{url}}
