@@ -23,6 +23,12 @@
 }
 \renewcommand*{\ppspace}{}
 \DeclareNameAlias{editor}{first-last}
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifbibliography
+    {\MakeUppercase{#1}}
+    {#1}
+}
+\renewcommand{\mkbibnameprefix}[1]{\MakeUppercase{#1}}
 
 % online
 

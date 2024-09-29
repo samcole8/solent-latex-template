@@ -1,2 +1,13 @@
 \ProvidesFile{solent-harvard.cbx}
 \RequireCitationStyle{authoryear}
+
+% Customizing the citation format to include parentheses
+\DeclareCiteCommand{\bracketcite}
+  {\usebibmacro{prenote}}
+  {\printnames{labelname}%
+   \addcomma\addspace%
+   \printfield{year}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\renewcommand*{\cite}[1]{\textup{(\bracketcite{#1})}}
