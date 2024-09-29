@@ -9,7 +9,7 @@
 \DeclareFieldFormat{chaptercase}{{#1}}
 \DeclareFieldFormat{publisher}{{#1}}
 \DeclareFieldFormat{edition}{%
-  #1\superscriptord{\mkordinalsuffix{#1}}\addspace\printtext{ed.}% Print the edition number with the superscripted ordinal suffix
+  #1\superscriptord{\mkordinalsuffix{#1}}\addspace\printtext{ed}\adddot% Print the edition number with the superscripted ordinal suffix
 }
 \DeclareFieldFormat[article]{number}{(#1)}
 \newcommand{\mkordinalsuffix}[1]{%
@@ -65,22 +65,21 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {\adddot}
-    {\addcomma\space\printfield{year}\printfield{extradate}\adddot}%
+    {}
+    {\addcomma\addspace\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
-    {\addspace\printfield[titlecase]{title}\adddot}
+    {\adddot\addspace\printfield[titlecase]{title}}%
   \iffieldundef{edition}
     {}
     {\ifnumless{\thefield{edition}}{2}
       {}
-      {\addspace\printfield{edition}}}%
-  \iflistundef{location}
-    {}
-    {\addspace\printlist{location}\addcolon\addspace}
+      {\adddot\addspace\printfield{edition}}}%
   \iflistundef{publisher}
     {}
-    {\addspace\printlist{publisher}}%
+    {\adddot\addspace\iflistundef{location}%
+      {\printlist{publisher}}%
+      {\printlist{location}\addcolon\addspace\printlist{publisher}}}%
   \iffieldundef{pages}
     {}
     {\addcomma\addspace\printfield{pages}}
