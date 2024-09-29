@@ -58,16 +58,13 @@ In the example above:
 
 #### Supported Sources
 
-Solent-Harvard style requires custom drivers for each type of source. Currently, partial support has been added for the following source types:
+Solent-Harvard style requires custom drivers for each type of source. These exist for the following source types:
 
-- Online (`@online`)
-- Book (`@book`)
-
-The source types listed below are work-in-progress, partially complete, and may not work as expected.
-
-- Academic journals (`@article`)
+- Online Sources (`@online`)
+- Books (`@book`)
 - Conference papers (`@inproceedings`)
-- Standards (`@techreport`)
+- Journal Articles (`@article`)
+- Standards & others (`@misc`)
 
 #### References
 
