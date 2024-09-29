@@ -98,32 +98,32 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {\adddot}
-    {\addcomma\space\printfield{year}\printfield{extradate}\adddot}%
+    {}
+    {\addcomma\space\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
-    {\addspace\printfield[chaptercase]{title}\adddot}
+    {\adddot\addspace\printfield[chaptercase]{title}}
   \ifnameundef{editor}
     {}
-    {\ifnum\value{editor} > 1
-        \printtext{In:}\addspace\printnames{editor}\addcomma\addspace\printtext{eds}\adddot
+    {\adddot\addspace\printtext{In:}\addspace\printnames{editor}\addcomma\addspace%
+    \ifnum\value{editor} > 1
+        \printtext{eds}\adddot
     \else
-        \printtext{In:}\addspace\printnames{editor}\addcomma\addspace\printtext{ed}\adddot
+        \printtext{ed}\adddot
     \fi}
   \iffieldundef{booktitle}
     {}
-    {\addspace\printfield[titlecase]{booktitle}\adddot}
+    {\adddot\addspace\printfield[titlecase]{booktitle}}
   \iffieldundef{edition}
     {}
     {\ifnumless{\thefield{edition}}{2}
       {}
-      {\addspace\printfield{edition}}}%
-  \iflistundef{location}
-    {}
-    {\addspace\printlist{location}\addcolon\addspace}
+      {\adddot\addspace\printfield{edition}}}%
   \iflistundef{publisher}
     {}
-    {\addspace\printlist{publisher}}%
+    {\adddot\addspace\iflistundef{location}%
+      {\printlist{publisher}}%
+      {\printlist{location}\addcolon\addspace\printlist{publisher}}}%
   \iffieldundef{pages}
     {}
     {\addcomma\addspace\printfield{pages}}
