@@ -74,7 +74,9 @@ References will be automatically formatted and parsed into the document upon cre
 
 #### Citations
 
- Use `\cite{id}` anywhere in your document to cite a source. Citations are currently work-in-progress, but you should be able to generate semi-compliant results.
+ Use `\cite{id}` anywhere in your document to cite a source.
+
+ When the author name is in the text, use `\citeyear{id}` to exclude the author name from the citation.
 
 ## Generating a PDF document
 
@@ -99,6 +101,10 @@ biber master && pdflatex master.tex
 Instructions coming soon.
 
 ### MacOS
+
+Instructions coming soon.
+
+### Overleaf
 
 Instructions coming soon.
 
