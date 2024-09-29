@@ -1,12 +1,40 @@
 \ProvidesFile{solent-harvard.cbx}
 \RequireCitationStyle{authoryear}
 
+\renewbibmacro*{name:andothers}{% Based on name:andothers from biblatex.def
+  \ifbibliography
+  {\ifboolexpr{
+    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+    and
+    test \ifmorenames
+  }
+    {\ifnumgreater{\value{liststop}}{1}
+       {\finalandcomma}
+       {}%
+     \andothersdelim\bibstring{andothers}}
+    {}}
+  {\ifboolexpr{
+    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+    and
+    test \ifmorenames
+  }
+    {\ifnumgreater{\value{liststop}}{1}
+       {\finalandcomma}
+       {}%
+     \andothersdelim\bibstring[\emph]{andothers}}
+    {}}}
+
 % Customizing the citation format to include parentheses
 \DeclareCiteCommand{\bracketcite}
   {\usebibmacro{prenote}}
-  {\printnames{labelname}%
-   \addcomma\addspace%
-   \printfield{year}}
+  {\ifnameundef{labelname}%
+    {\printtext{Anon}\adddot}%
+    {\printnames{labelname}}%%
+   \addspace%
+   \printfield{year}%
+   \iffieldundef{pages}%
+    {}
+    {\addcomma\addspace\printfield{pages}}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
