@@ -38,4 +38,15 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
+  \DeclareCiteCommand{\bracketciteyear}
+  {\usebibmacro{prenote}}
+  {\printfield{year}%
+   \iffieldundef{pages}%
+    {}
+    {\addcomma\addspace\printfield{pages}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
 \renewcommand*{\cite}[1]{\textup{(\bracketcite{#1})}}
+
+\renewcommand*{\citeyear}[1]{\textup{(\bracketciteyear{#1})}}
