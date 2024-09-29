@@ -159,8 +159,34 @@
   \finentry
 }
 
-% techreport (standards e.t.c.)
+% misc (standards e.t.c.)
 
+\newbibmacro*{bbx:misc}{%
+  \ifnameundef{author}%
+    {\printtext{ANON}\adddot}
+    {\printnames{author}}%
+  \iffieldundef{year}
+    {\adddot}
+    {\addcomma\space\printfield{year}\adddot}%
+  \iffieldundef{title}
+    {}
+    {\addspace\printfield[titlecase]{title}\adddot}
+  \iflistundef{location}
+    {}
+    {\addspace\printlist{location}\addcolon\addspace}
+  \iflistundef{publisher}
+    {}
+    {\addspace\printlist{publisher}}%
+  \iffieldundef{pages}
+    {}
+    {\addcomma\addspace\printfield{pages}}
+  \newunit\newblock
+}
+
+\DeclareBibliographyDriver{misc}{%
+  \usebibmacro{bbx:misc}%
+  \finentry
+}
 % inproceedings (conference papers)
 
 \newbibmacro*{bbx:inproceedings}{%
@@ -204,5 +230,3 @@
   \usebibmacro{bbx:inproceedings}%
   \finentry
 }
-
-% misc
