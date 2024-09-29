@@ -11,7 +11,7 @@
 % Images
 \usepackage[]{graphicx}
 \usepackage[]{capt-of}
-\graphicspath{ {./images/} }
+\graphicspath{{./images/}}
 
 % Fill page
 \usepackage{fullpage}
@@ -22,62 +22,61 @@
 \renewcommand{\finentrypunct}{}
 \setlength{\bibitemsep}{0.5\baselineskip}
 
-\title{Report}
-\author{Anon}
-\date{January 1970}
 
 % frontmatter/mainmatter/backmatter
 \makeatletter
 
-    \newcommand\frontmatter{%
-        \cleardoublepage
-    %\@mainmatterfalse
-    \pagenumbering{roman}}
+\newcommand\frontmatter{
+    \cleardoublepage%
+    \pagenumbering{roman}
+}
 
-    \newcommand\mainmatter{%
-        \cleardoublepage
-    % \@mainmattertrue
-    \pagenumbering{arabic}}
+\newcommand\mainmatter{
+    \cleardoublepage%
+    \pagenumbering{arabic}
+}
 
-    \newcommand\backmatter{%
-    \if@openright
-        \cleardoublepage
+\newcommand\backmatter{
+    \if@openright%
+    \cleardoublepage%
     \else
-        \clearpage
+    \clearpage
     \fi
-    % \@mainmatterfalse
-    }
+}
 
 \makeatother
 
 \begin{document}
 
-    \nocite{*}
-    \raggedright
+\nocite{*}
+\raggedright%
 
-    \frontmatter
+\frontmatter
 
-        % Title page
-        \maketitle
+% Title page
+\title{Report}
+\author{Anon}
+\date{January 1970}
+\maketitle
 
-        \tableofcontents
-        \listoffigures
-        \listoftables
+% Other frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
 
-    \mainmatter
+\mainmatter%
+% Redefine format for chapter headings in document body
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
 
-        % Redefine format for chapter headings in document body
-        \titleformat{\chapter}[display]
-        {\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
+\chapter{Introduction}
 
-        \chapter{Introduction}
+\chapter{Literature Survey}
 
-        \chapter{Literature Survey}
-            
-        \chapter{Methodology}
+\chapter{Methodology}
 
-        \chapter{Conclusions}
+\chapter{Conclusions}
 
-        \printbibliography[heading=bibnumbered,title={References}]
+\printbibliography[heading=bibnumbered,title={References}]
 
 \end{document}
