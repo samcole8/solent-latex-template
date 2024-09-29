@@ -2,50 +2,50 @@
 \RequireCitationStyle{authoryear}
 
 \renewbibmacro*{name:andothers}{% Based on name:andothers from biblatex.def
-  \ifbibliography
-  {\ifboolexpr{
-    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
-    and
-    test \ifmorenames
-  }
-    {\ifnumgreater{\value{liststop}}{1}
-       {\finalandcomma}
-       {}%
-     \andothersdelim\bibstring{andothers}}
-    {}}
-  {\ifboolexpr{
-    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
-    and
-    test \ifmorenames
-  }
-    {\ifnumgreater{\value{liststop}}{1}
-       {\finalandcomma}
-       {}%
-     \andothersdelim\bibstring[\emph]{andothers}}
-    {}}}
+    \ifbibliography
+    {\ifboolexpr{
+            test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+            and
+            test \ifmorenames
+        }
+        {\ifnumgreater{\value{liststop}}{1}
+            {\finalandcomma}
+            {}%
+            \andothersdelim\bibstring{andothers}}
+        {}}
+    {\ifboolexpr{
+            test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+            and
+            test \ifmorenames
+        }
+        {\ifnumgreater{\value{liststop}}{1}
+            {\finalandcomma}
+            {}%
+            \andothersdelim\bibstring[\emph]{andothers}}
+        {}}}
 
 % Customizing the citation format to include parentheses
 \DeclareCiteCommand{\bracketcite}
-  {\usebibmacro{prenote}}
-  {\ifnameundef{labelname}%
+{\usebibmacro{prenote}}
+{\ifnameundef{labelname}%
     {\printtext{Anon}\adddot}%
     {\printnames{labelname}}%%
-   \addspace%
-   \printfield{year}\printfield{extradate}%
-   \iffieldundef{pages}%
+    \addspace%
+    \printfield{year}\printfield{extradate}%
+    \iffieldundef{pages}%
     {}
     {\addcomma\addspace\printfield{pages}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
-  \DeclareCiteCommand{\bracketciteyear}
-  {\usebibmacro{prenote}}
-  {\printfield{year}\printfield{extradate}%
-   \iffieldundef{pages}%
+\DeclareCiteCommand{\bracketciteyear}
+{\usebibmacro{prenote}}
+{\printfield{year}\printfield{extradate}%
+    \iffieldundef{pages}%
     {}
     {\addcomma\addspace\printfield{pages}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 \renewcommand*{\cite}[1]{\textup{(\bracketcite{#1})}}
 
