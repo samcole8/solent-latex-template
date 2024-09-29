@@ -37,11 +37,11 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {\addcomma\space\printtext{n.d}\adddot\printtext{-}\printfield{extradate}\adddot}
-    {\addcomma\space\printfield{year}\printfield{extradate}\adddot}%
+    {\addcomma\space\printtext{n.d}\adddot\printfield{extradate}}
+    {\addcomma\space\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
-    {\addspace\printfield[titlecase]{title}
+    {\adddot\addspace\printfield[titlecase]{title}
     \iffieldundef{urlyear}
       {\adddot}
       {}}%
@@ -65,7 +65,7 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {}
+    {\addcomma\space\printtext{n.d}\adddot\printfield{extradate}}
     {\addcomma\addspace\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
@@ -98,7 +98,7 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {}
+    {\addcomma\space\printtext{n.d}\adddot\printfield{extradate}}
     {\addcomma\space\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
@@ -142,7 +142,7 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {}
+    {\addcomma\space\printtext{n.d}\adddot\printfield{extradate}}
     {\addcomma\addspace\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
@@ -174,7 +174,7 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {}
+    {\addcomma\space\printtext{n.d}\adddot\printfield{extradate}}
     {\addcomma\space\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
@@ -201,7 +201,7 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {}
+    {\addcomma\space\printtext{n.d}\adddot\printfield{extradate}}
     {\addcomma\space\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
