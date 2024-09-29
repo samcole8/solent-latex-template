@@ -142,14 +142,14 @@
     {\printtext{ANON}\adddot}
     {\printnames{author}}%
   \iffieldundef{year}
-    {\adddot}
-    {\addcomma\space\printfield{year}\printfield{extradate}\adddot}%
+    {}
+    {\addcomma\addspace\printfield{year}\printfield{extradate}}%
   \iffieldundef{title}
     {}
-    {\addspace\printfield[chaptercase]{title}\adddot}
+    {\adddot\addspace\printfield[chaptercase]{title}}
   \iffieldundef{journaltitle}
     {}
-    {\addspace\printfield[titlecase]{journaltitle}}%
+    {\adddot\addspace\printfield[titlecase]{journaltitle}}%
   \iffieldundef{volume}
     {}
     {\addcomma\addspace\printfield{volume}%
