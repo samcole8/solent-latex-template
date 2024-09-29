@@ -6,6 +6,13 @@
 
 LaTeX Template for Southampton Solent University reports.
 
+## Why use LaTeX?
+
+Formatting in Microsoft Word (and other document editors) is notoriously painful. LaTeX separates concerns by defining 
+the layout as code, meaning you can focus on the content of your work without messing things up.
+
+It can also parse exported references into the document in the Solent-Harvard format, and will work with tools like RefWorks or Zotero.
+
 ## Disclaimer
 
 Every effort has been made to ensure that this template accurately produces documents in the required format. However, responsibility lies with the user in the event that it produces incorrectly formatted or corrupted content.
@@ -78,35 +85,35 @@ References will be automatically formatted and parsed into the document upon cre
 
  When the author name is in the text, use `\citeyear{id}` to exclude the author name from the citation.
 
+### Tables
+
+LaTeX tables guide: https://www.overleaf.com/learn/latex/Tables
+
+### Footnotes
+
+Footnotes guide: https://www.overleaf.com/learn/latex/Footnotes
+
+### Cross-referencing
+
+Cross-referencing guide: https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats
+
 ## Generating a PDF document
 
 First, [install LaTeX](https://www.latex-project.org/get/). Then, refer to the OS-specific instructions below.
 
-### Linux
+### Linux & Windows
 
-To generate `master.pdf`, open a terminal and run the command below:
+1. To generate `master.pdf`, open a terminal and run the command below:
 
-```
-pdflatex master.tex
-```
+    ```
+    pdflatex master.tex
+    ```
 
-If you are using BibLaTeX, run `biber` *after* `pdflatex` and then re-run it:
+2. If you are using BibLaTeX, run `biber` *after* `pdflatex` and then re-run it:
 
-```
-biber master && pdflatex master.tex
-```
-
-### Windows
-
-Instructions coming soon.
-
-### MacOS
-
-Instructions coming soon.
-
-### Overleaf
-
-Instructions coming soon.
+    ```
+    biber master && pdflatex master.tex
+    ```
 
 ## Software license
 
