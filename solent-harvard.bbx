@@ -3,6 +3,8 @@
 
 % Custom drivers:
 
+\renewcommand{\finentrypunct}{}
+\setlength{\bibitemsep}{0.5\baselineskip}
 \DeclareFieldFormat{urldate}{\mkbibbrackets{\printtext{viewed}\addspace\thefield{urlday}\addspace\mkbibmonth{\thefield{urlmonth}}\addspace\thefield{urlyear}}}
 \DeclareFieldFormat{url}{\url{#1}}
 \DeclareFieldFormat{titlecase}{\mkbibemph{#1}}
