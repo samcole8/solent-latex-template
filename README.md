@@ -1,10 +1,10 @@
 # SSU LaTeX Template
 [![](https://img.shields.io/github/v/release/samcole8/solent-latex-template
 )](https://github.com/samcole8/solent-latex-template/releases/latest)
-![](https://img.shields.io/badge/status-in_development-orange
+![](https://img.shields.io/badge/status-maintained-green
 )
 
-LaTeX Template for Southampton Solent University reports.
+LaTeX Template and BibLaTeX bibliography style for Southampton Solent University reports.
 
 ## Why use LaTeX?
 
@@ -77,7 +77,7 @@ Solent-Harvard style requires custom drivers for each type of source. These exis
 
 References go in the `refs.bib` file in BibTeX format. You can generate these with a reference management tool such as RefWorks or Zotero.
 
-References will be automatically formatted and parsed into the document upon creation.
+References in this file will be automatically formatted and parsed into the document upon creation.
 
 #### Citations
 
