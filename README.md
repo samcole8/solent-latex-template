@@ -99,17 +99,16 @@ Cross-referencing guide: https://www.overleaf.com/learn/latex/Cross_referencing_
 
 ## Generating a PDF document
 
-First, [install LaTeX](https://www.latex-project.org/get/). Then, refer to the OS-specific instructions below.
+The easiest way to use LaTeX is with [Overleaf](https://www.overleaf.com/)—just import a copy of the template. Alternatively, you can install it locally on Linux or Windows. Below are instructions for local installations.
 
 ### Linux & Windows
 
-1. To generate `master.pdf`, open a terminal and run the command below:
-
+1. [Install LaTeX](https://www.latex-project.org/get/).
+2. To generate `master.pdf`, open a terminal and run the command below:
     ```
     pdflatex master.tex
     ```
-
-2. If you are using BibLaTeX, run `biber` *after* `pdflatex` and then re-run it:
+3. If you are using BibLaTeX, run `biber` *after* `pdflatex` and then re-run it:
 
     ```
     biber master && pdflatex master.tex
