@@ -16,6 +16,12 @@
 % Fill page
 \usepackage{fullpage}
 
+% Glossaries
+\usepackage{glossaries}
+\usepackage[automake]{glossaries-extra}
+\makeglossaries
+% Add glossary entries here
+
 % Bibliography
 \usepackage[backend=biber, style=solent-harvard, giveninits=true, maxnames=3, minnames=1, uniquename=false]{biblatex}
 \addbibresource{refs.bib}
@@ -61,6 +67,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
+\printglossary[title={List of Definitions}]
 
 % Redefine format for chapter headings in document body
 \titleformat{\chapter}[display]
