@@ -97,6 +97,10 @@ Footnotes guide: https://www.overleaf.com/learn/latex/Footnotes
 
 Cross-referencing guide: https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats
 
+### Glossary / Definitions / Acronyms
+
+Glossary guide: https://www.overleaf.com/learn/latex/Glossaries
+
 ## Generating a PDF document
 
 The easiest way to use LaTeX is with [Overleaf](https://www.overleaf.com/)—just import a copy of the template. Alternatively, you can install it locally on Linux or Windows. Below are instructions for local installations.
