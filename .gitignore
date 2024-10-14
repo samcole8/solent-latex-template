@@ -2,6 +2,10 @@
 images/*
 !images/.gitkeep
 
+# Others
+*.*-SAVE-ERROR
+*.ist
+
 ## Outputs
 *.pdf
 
