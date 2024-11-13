@@ -43,7 +43,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor diam augue, 
 Fusce mauris dolor, egestas quis molestie ac, semper et libero. Pellentesque varius eros in dui porta suscipit.
 ```
 
-### Figures
+### Images
 
 To insert an image, use the following code block:
 
@@ -59,7 +59,9 @@ To insert an image, use the following code block:
 In the example above:
 
 - LaTeX looks for an image called `your_image.png` in the `./images/` folder.
-- The figure has the caption "*Example image*".
+- The figure has the caption "*Figure X.X: Example image*".
+
+*Note: This repository's `.gitignore` ***ignores*** images by default. If you want to include them in version control, omit  `images/*`.*
 
 ### Referencing & Citations
 
