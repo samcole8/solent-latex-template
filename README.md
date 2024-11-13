@@ -87,21 +87,14 @@ References in this file will be automatically formatted and parsed into the docu
 
  When the author name is in the text, use `\citeyear{id}` to exclude the author name from the citation.
 
-### Tables
+### Other Elements
 
-LaTeX tables guide: https://www.overleaf.com/learn/latex/Tables
+The guides listed below explain how to implement some other common typesetting features, courtesy of [Overleaf](https://www.overleaf.com/).
 
-### Footnotes
-
-Footnotes guide: https://www.overleaf.com/learn/latex/Footnotes
-
-### Cross-referencing
-
-Cross-referencing guide: https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats
-
-### Glossary / Definitions / Acronyms
-
-Glossary guide: https://www.overleaf.com/learn/latex/Glossaries
+- [Tables](https://www.overleaf.com/learn/latex/Tables)
+- [Footnotes](https://www.overleaf.com/learn/latex/Footnotes)
+- [Cross-referencing](https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats)
+- [Glossary](https://www.overleaf.com/learn/latex/Glossaries)
 
 ## Generating a PDF document
 
