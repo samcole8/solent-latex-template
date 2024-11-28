@@ -1,3 +1,7 @@
+# Python virtual environments
+venv
+.venv
+
 ## Images
 images/*
 !images/.gitkeep
