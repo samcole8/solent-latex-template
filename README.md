@@ -87,6 +87,33 @@ References in this file will be automatically formatted and parsed into the docu
 
  When the author name is in the text, use `\citeyear{id}` to exclude the author name from the citation.
 
+### Code Blocks
+
+The `minted` package can be used to automatically highlight code, but there are some prerequisites if you are doing this locally. For this reason, it is disabled by default, but can be enabled by uncommenting the following lines in `master.tex`:
+
+```latex
+% Code
+% \usepackage{minted}
+```
+
+Then, you will need to set up the `pygments` syntax highlighter. Assuming you have [Python 3](https://www.python.org/) installed, the following commands will do this (depending on your OS).
+
+1. `python3 -m /path/to/venv`
+2. `source /path/to/venv/bin/activate`
+3. `pip install pygments`
+
+You will need to re-run the second command to activate the virtual environment every time you close the terminal.
+
+Then, you can add `minted` blocks which typically look something like this:
+
+```latex
+\begin{minted}[linenos,breaklines]{<your_programming_language>}
+    <your_code_here>
+\end{minted}
+```
+
+However, there are lots of other options. More information is available on [Overleaf](https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted).
+
 ### Other Elements
 
 The guides listed below explain how to implement some other common typesetting features, courtesy of [Overleaf](https://www.overleaf.com/).
