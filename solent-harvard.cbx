@@ -31,7 +31,9 @@
     {\printtext{Anon}\adddot}%
     {\printnames{labelname}}%%
     \addspace%
-    \printfield{year}\printfield{extradate}%
+    \iffieldundef{year}%
+    {\addcomma\space\printtext{n.d}\adddot\printfield{extradate}}%
+    {\addcomma\space\printfield{year}\printfield{extradate}}%
     \iffieldundef{pages}%
     {}
     {\addcomma\addspace\printfield{pages}}}
@@ -40,7 +42,9 @@
 
 \DeclareCiteCommand{\bracketciteyear}
 {\usebibmacro{prenote}}
-{\printfield{year}\printfield{extradate}%
+{\iffieldundef{year}%
+    {\printtext{n.d}\adddot\printfield{extradate}}%
+    {\printfield{year}\printfield{extradate}}%
     \iffieldundef{pages}%
     {}
     {\addcomma\addspace\printfield{pages}}}
