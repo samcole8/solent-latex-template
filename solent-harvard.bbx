@@ -53,6 +53,10 @@
     \iffieldundef{url}
     {}
     {\addspace\printtext{Available from:}\addspace\printfield{url}}
+    \iffieldundef{doi}
+    {}
+    {\addcomma\space\printfield{doi}}%
+    \newunit\newblock
 }
 
 \DeclareBibliographyDriver{online}{%
@@ -85,6 +89,9 @@
     \iffieldundef{pages}
     {}
     {\addcomma\addspace\printfield{pages}}
+    \iffieldundef{doi}
+    {}
+    {\addcomma\space\printfield{doi}}%
     \newunit\newblock
 }
 
@@ -129,6 +136,9 @@
     \iffieldundef{pages}
     {}
     {\addcomma\addspace\printfield{pages}}
+    \iffieldundef{doi}
+    {}
+    {\addcomma\space\printfield{doi}}%
     \newunit\newblock
 }
 
@@ -161,6 +171,9 @@
     \iffieldundef{pages}%
     {}
     {\addcomma\addspace\thefield{pages}}
+    \iffieldundef{doi}
+    {}
+    {\addcomma\space\printfield{doi}}%
     \newunit\newblock
 }
 
@@ -189,6 +202,9 @@
     \iffieldundef{pages}
     {}
     {\addcomma\addspace\printfield{pages}}
+    \iffieldundef{doi}
+    {}
+    {\addcomma\space\printfield{doi}}%
     \newunit\newblock
 }
 
@@ -232,6 +248,9 @@
     \iffieldundef{pages}
     {}
     {\addcomma\addspace\printfield{pages}}
+    \iffieldundef{doi}
+    {}
+    {\addcomma\space\printfield{doi}}%
     \newunit\newblock
 }
 
