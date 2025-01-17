@@ -1,94 +1,67 @@
 %TC:group minted [] xxx
-% Preamble
 \documentclass[12pt]{report}
 
-% Language
+% language & text
 \usepackage[british]{babel}
-
-% Spacing
-\setlength{\parskip}{1em}
-\usepackage{titlesec}
-
-% Fonts
+\usepackage{csquotes}
 \usepackage[T1]{fontenc}
 
-% TOC links
-\usepackage{hyperref}
+% spacing & margins
+\setlength{\parskip}{1em}
+\usepackage{titlesec}
+\usepackage{fullpage}
 
-% Float tables
-\usepackage{float}
-
-% Images
+% images
 \usepackage[]{graphicx}
 \usepackage[]{capt-of}
 \graphicspath{{./images/}}
 
-% Code
-% \usepackage{minted}
+% Bibliography
+\usepackage[backend=biber, style=solent-harvard, giveninits=true, maxnames=3, minnames=1, uniquename=false]{biblatex}
+\addbibresource{refs.bib} % change this to your `.bib` file
 
-\NewDocumentCommand{\codeword}{v}{%
-\texttt{{#1}}%
-}
+% code - disabled by default
+%\usepackage{minted}
+%\NewDocumentCommand{\codeword}{v}{%
+%\texttt{{#1}}%
+%}
 
-% Fill page
-\usepackage{fullpage}
+\usepackage{hyperref} % dynamic links
+\usepackage{float} % floating tables
 
-% Glossaries
+% glossary
 \usepackage{glossaries}
 \usepackage[automake]{glossaries-extra}
 \makeglossaries%
-% Add glossary entries here
+% add glossary entries here
 
-% Bibliography
-\usepackage[backend=biber, style=solent-harvard, giveninits=true, maxnames=3, minnames=1, uniquename=false]{biblatex}
-\addbibresource{refs.bib}
-
-% frontmatter/mainmatter/backmatter
+% sectioning
 \makeatletter
-
-\newcommand\frontmatter{
-    \cleardoublepage%
-    \pagenumbering{roman}
-}
-
-\newcommand\mainmatter{
-    \cleardoublepage%
-    \pagenumbering{arabic}
-}
-
-\newcommand\backmatter{
-    \if@openright%
-    \cleardoublepage%
-    \else
-    \clearpage
-    \fi
-}
-
+\newcommand\frontmatter{\cleardoublepage\pagenumbering{roman}}
+\newcommand\mainmatter{\cleardoublepage\pagenumbering{arabic}}
+\newcommand\backmatter{\if@openright\cleardoublepage\pagenumbering{arabic}\else\clearpage\fi}
 \makeatother
 
 \begin{document}
 
-\nocite{*}
 \raggedright%
-
 \frontmatter
 
-% Title page
+% title page
 \title{Report Title
     \\ \large Subtitle}
 \author{Author Name}
 \date{\today}
 \maketitle
 
-% Other frontmatter
+% other frontmatter
 \tableofcontents
 \listoffigures
 \listoftables
 \printglossary[title={List of Definitions}]
 
-% Redefine format for chapter headings in document body
-\titleformat{\chapter}[display]
-{\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
+% redefine chapter headings
+\titleformat{\chapter}[display]{\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
 \mainmatter%
 
 \chapter{Introduction}
@@ -101,6 +74,11 @@
 
 \backmatter%
 
+% uncomment to include uncited sources
+% \nocite{*}
 \printbibliography[heading=bibnumbered,title={References}]
+
+\appendix
+\chapter{Appendix}
 
 \end{document}
