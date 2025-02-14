@@ -40,10 +40,17 @@
 }
 
 % glossary
-\usepackage{glossaries}
+\usepackage[acronym]{glossaries}
 \usepackage[automake]{glossaries-extra}
 \makeglossaries%
 % add glossary entries here
+
+\newglossaryentry{example}{
+  name={Example},
+  description={Definition of Example}
+}
+
+\newacronym{ab1}{AB1}{Abbreviation 1}
 
 % sectioning
 \makeatletter
@@ -75,13 +82,15 @@
   {\large \today} \\
 \end{titlepage}
 
-% other frontmatter
+% other frontmatter - remove as required
 \tableofcontents
 \listoffigures
 \listoftables
 % enable if using minted code
 % \listoflistings
-\printglossary[title={List of Definitions}]
+\printglossary[title={List of Definitions}, type=main]
+\printglossary[title={List of Abbreviations}, type=acronym]
+
 
 % redefine chapter headings
 \titleformat{\chapter}[display]{\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
