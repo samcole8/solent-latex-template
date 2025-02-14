@@ -4,15 +4,16 @@ This section provides guidance on how to use common LaTeX features. For more com
 
 **Table of Contents**
 
-- [1. Headings](#1-headings)
-- [2. Paragraphs](#2-paragraphs)
-- [3. Images](#3-images)
-- [4. Referencing \& Citations](#4-referencing--citations)
-  - [4.1. Supported Sources](#41-supported-sources)
-  - [4.2. References](#42-references)
-  - [4.3. Citations](#43-citations)
-- [5. Code Blocks](#5-code-blocks)
-- [6. Other Elements](#6-other-elements)
+- [Usage Guide](#usage-guide)
+  - [1. Headings](#1-headings)
+  - [2. Paragraphs](#2-paragraphs)
+  - [3. Images](#3-images)
+  - [4. Referencing \& Citations](#4-referencing--citations)
+    - [4.1. Supported Sources](#41-supported-sources)
+    - [4.2. References](#42-references)
+    - [4.3. Citations](#43-citations)
+  - [5. Code Blocks](#5-code-blocks)
+  - [6. Other Elements](#6-other-elements)
 
 ## 1. Headings
 
@@ -97,10 +98,15 @@ You will need to re-run the second command to activate the virtual environment e
 Then, you can add `minted` blocks which typically look something like this:
 
 ```latex
+\begin{listing}[H]
 \begin{minted}[linenos,breaklines]{<your_programming_language>}
     <your_code_here>
 \end{minted}
+\caption{Code caption}\label{listing:custom-label}
+\end{listing}
 ```
+
+Encapsulating it in a `listing` float ensures it receives a Listing caption and appears in the "List of Listings" section, if enabled.
 
 However, there are lots of other options. More information is available on [Overleaf](https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted).
 
