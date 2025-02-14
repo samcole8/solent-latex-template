@@ -13,7 +13,8 @@ This section provides guidance on how to use common LaTeX features. For more com
     - [4.2. References](#42-references)
     - [4.3. Citations](#43-citations)
   - [5. Code Blocks](#5-code-blocks)
-  - [6. Other Elements](#6-other-elements)
+  - [6. List of Definitions \& List of Abbreviations](#6-list-of-definitions--list-of-abbreviations)
+  - [7. Other Elements](#7-other-elements)
 
 ## 1. Headings
 
@@ -110,11 +111,31 @@ Encapsulating it in a `listing` float ensures it receives a Listing caption and 
 
 However, there are lots of other options. More information is available on [Overleaf](https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted).
 
-## 6. Other Elements
+## 6. List of Definitions & List of Abbreviations
+
+You can add hyperlinked entries for both definitions and abbreviations in the document using `\newglossaryentry` for definitions and `\newacronym` for abbreviations.
+
+```
+\newglossaryentry{example}{
+    name={Example},
+    description={Definition of Example}
+}
+
+\newacronym{ab1}{AB1}{Abbreviation 1}
+```
+
+Reference them using their respective names in the documents:
+
+```
+My abbreviation is \gls{ab1}. My example definition is \gls{example}.
+```
+
+More information is available on [Overleaf](https://www.overleaf.com/learn/latex/Glossaries).
+
+## 7. Other Elements
 
 The guides listed below explain how to implement some other common typesetting features, courtesy of [Overleaf](https://www.overleaf.com/).
 
 - [Tables](https://www.overleaf.com/learn/latex/Tables)
 - [Footnotes](https://www.overleaf.com/learn/latex/Footnotes)
 - [Cross-referencing](https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats)
-- [Glossary](https://www.overleaf.com/learn/latex/Glossaries)
