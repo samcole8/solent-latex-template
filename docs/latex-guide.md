@@ -4,17 +4,16 @@ This section provides guidance on how to use common LaTeX features. For more com
 
 **Table of Contents**
 
-- [Usage Guide](#usage-guide)
-  - [1. Headings](#1-headings)
-  - [2. Paragraphs](#2-paragraphs)
-  - [3. Images](#3-images)
-  - [4. Referencing \& Citations](#4-referencing--citations)
-    - [4.1. Supported Sources](#41-supported-sources)
-    - [4.2. References](#42-references)
-    - [4.3. Citations](#43-citations)
-  - [5. Code Blocks](#5-code-blocks)
-  - [6. List of Definitions \& List of Abbreviations](#6-list-of-definitions--list-of-abbreviations)
-  - [7. Other Elements](#7-other-elements)
+- [1. Headings](#1-headings)
+- [2. Paragraphs](#2-paragraphs)
+- [3. Images](#3-images)
+- [4. Referencing \& Citations](#4-referencing--citations)
+  - [4.1. Supported Sources](#41-supported-sources)
+  - [4.2. References](#42-references)
+  - [4.3. Citations](#43-citations)
+- [5. Code Blocks](#5-code-blocks)
+- [6. List of Definitions \& List of Abbreviations](#6-list-of-definitions--list-of-abbreviations)
+- [7. Other Elements](#7-other-elements)
 
 ## 1. Headings
 
@@ -66,6 +65,7 @@ Solent-Harvard style requires custom drivers for each type of source. These exis
 - Conference papers (`@inproceedings`)
 - Journal Articles (`@article`)
 - Standards & others (`@misc`)
+- Reports (`@report`)
 
 ### 4.2. References
 
