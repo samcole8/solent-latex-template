@@ -258,3 +258,39 @@
     \usebibmacro{bbx:inproceedings}%
     \finentry
 }
+
+% report
+
+\newbibmacro*{bbx:report}{%
+    % Author or ANON
+    \ifnameundef{author}%
+    {\printtext{ANON}}%
+    {\printnames{author}}%
+    \addcomma\space
+    % Year or n.d.
+    \iffieldundef{year}%
+    {\printtext{n.d}}%
+    {\printfield{year}}%
+    \adddot\space
+    % Title
+    \iffieldundef{title}{}{
+        \printfield[chaptercase]{title}\adddot\space}%
+    % Edition (if not first)
+    \iffieldundef{edition}{\addspace}{%
+        \iffieldequalstr{edition}{1}{}{%
+            \printfield{edition}edition}}%
+    % Place and Publisher
+    \iflistundef{location}{\adddot\space}{%
+        \printlist{location}}%
+    \iflistundef{publisher}{}{%
+        \addcolon\space\printlist{publisher}}%
+    \iffieldundef{doi}
+    {}
+    {\addcomma\space\printfield{doi}}%
+    \newunit\newblock
+}
+
+\DeclareBibliographyDriver{report}{%
+    \usebibmacro{bbx:report}%
+    \finentry
+}
