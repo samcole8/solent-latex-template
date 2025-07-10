@@ -29,3 +29,9 @@ This template is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.or
 - You *cannot* use the template code itself (**software**) for commercial purposes.
 - You *can* use the generated PDF/DOCX document (**content**) for any purpose, including commercial applications, without attribution.
 - If you redistribute the template code (**software**), you must attribute the [original source](https://github.com/samcole8/solent-latex-template) and retain the existing license.
+
+## Contribution
+
+As of July 2025, I am no longer a student at Solent University. However, this is a relatively simple project that I am open to maintaining, as long as there are no major changes to the Solent-Harvard referencing style.
+
+If you spot a bug or would like a new feature, you can open an issue [here](https://github.com/samcole8/solent-latex-template/issues/new/choose), or [submit a pull request](https://github.com/samcole8/solent-latex-template/compare).
