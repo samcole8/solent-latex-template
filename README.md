@@ -12,6 +12,8 @@ This repository contains a pre-structured template for LaTeX reports formatted a
 
 ![](resources/bib-example.png)
 
+An example PDF document produced with this template and style is available [here](https://github.com/samcole8/solent-latex-template/blob/91188d69f8995c7bdad99f400d6c3190a629d2f8/master.pdf).
+
 ## Documentation
 Guidance and usage instructions can be found in the documentation, available [online](https://samcole8.github.io/solent-latex-template/) or in the `docs/` directory.
 
